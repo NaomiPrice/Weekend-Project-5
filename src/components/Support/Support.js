@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 
 class Support extends Component {
+
+    handleNext=()=>{
+
+        this.props.history.push('/comments');
+    }
     render(){
         return(
             <div>
-                Do you feel Supported?
+                <div>
+                    Do you feel Supported?
+                </div>
+                <button onClick={this.handleNext}>NEXT</button>
             </div>
         )
     }

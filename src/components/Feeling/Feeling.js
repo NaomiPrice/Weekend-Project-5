@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 
 class Feeling extends Component {
+
+    handleNext = ()=>{
+        this.props.history.push('/understanding')
+    }
+
     render(){
         return(
             <div>
-                Tell me all your feelings
+                <div>
+                    Tell me all your feelings
+                </div>
+                <button onClick={this.handleNext}>NEXT</button>
             </div>
+            
         )
     }
 }
