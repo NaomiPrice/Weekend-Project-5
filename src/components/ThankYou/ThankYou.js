@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 
-class Feeling extends Component {
+class ThankYou extends Component {
 
     handleNext = ()=>{
         //step to the next page
-        this.props.history.push('/understanding')
+        this.props.history.push('/feeling')
     }
 
     render(){
         return(
             <div>
                 <div>
-                    Tell me all your feelings
+                    Thank you for submitting your feedback
                 </div>
-                <button onClick={this.handleNext}>NEXT</button>
+                <button onClick={this.handleNext}>Start Another Feedback</button>
             </div>
             
         )
     }
 }
 
-export default Feeling;
+export default ThankYou;
