@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Select from '../Select/Select';
+import PageTitle from '../PageTitle/PageTitle';
 
 class Feeling extends Component {
     
@@ -13,9 +14,7 @@ class Feeling extends Component {
         
         return(
             <div>
-                <div className="pageTitle">
-                    <h2>How are you feeling today?</h2>
-                </div>
+                <PageTitle pageTitle={'How are you feeling today?'}/>
                 <Select pageAdvance={this.pageAdvance}
                         description={`Feeling?: 1 for "I'm stressed", 5 for "feeling great!"`}/>
             </div>

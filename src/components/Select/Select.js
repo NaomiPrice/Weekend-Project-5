@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
 class Select extends Component {
+    //local state to hold answer value provided by user
     state = {
         answer: ''
     }
+
     handleChange = (event)=>{
         //on answer selection - update local state with value selected
         this.setState({
@@ -23,6 +25,7 @@ class Select extends Component {
     render(){
         return(
                 <div className="pageInput">
+                    {/* //selection description provided by parent component */}
                     <label>{this.props.description}</label>
                     <br></br>
                     <select onChange={this.handleChange}>
