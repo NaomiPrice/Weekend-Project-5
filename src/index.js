@@ -9,8 +9,11 @@ import logger from 'redux-logger';
 
 
 
-const feedbackReducer = (state=[1,0], action)=>{
+const feedbackReducer = (state=[], action)=>{
     console.log(state);
+    if (action.type === 'SEND_FEEDBACK_VALUE'){
+        return [...state, action.payload]
+    }
     return state;
 }
 

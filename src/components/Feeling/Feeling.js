@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import Select from '../Select/Select';
 import PageTitle from '../PageTitle/PageTitle';
+import {connect} from 'react-redux';
 
 class Feeling extends Component {
     
     pageAdvance = (answer)=>{
         console.log(answer)
+        //update redux with answer value received from child
+        this.props.dispatch({type: 'SEND_FEEDBACK_VALUE', payload: {feeling: answer}})
         //step to the next page
         this.props.history.push('/understanding')
     }
@@ -22,4 +25,4 @@ class Feeling extends Component {
     }
 }
 
-export default Feeling;
+export default connect()(Feeling);
