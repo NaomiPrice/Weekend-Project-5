@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import PageTitle from '../PageTitle/PageTitle';
+import {connect} from 'react-redux';
 
 class ThankYou extends Component {
 
     handleNext = ()=>{
-        //step to the next page
+         //empty redux feedbackReducer state
+        this.props.dispatch({type: 'EMPTY_STATE'})
+        //step to the beginnign again
         this.props.history.push('/feeling')
     }
 
     render(){
         return(
             <div>
-                
                 <PageTitle pageTitle={'Thank you for your feedback!'}/>
                 <button onClick={this.handleNext}>Leave New Feedback</button>
             </div>
@@ -20,4 +22,4 @@ class ThankYou extends Component {
     }
 }
 
-export default ThankYou;
+export default connect()(ThankYou);

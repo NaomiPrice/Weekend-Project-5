@@ -5,9 +5,8 @@ import PageTitle from '../PageTitle/PageTitle';
 class ReviewPage extends Component {
 
     handleSubmit = ()=>{
-        //post call to add comments to database
-        //empty redux feedbackReducer state
-        this.props.dispatch({type: 'EMPTY_STATE'})
+        //post call to add comments to server/db
+       
         //step to thank you page
         this.props.history.push('/thank-you');
     }
