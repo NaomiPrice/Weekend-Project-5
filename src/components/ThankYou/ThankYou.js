@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PageTitle from '../PageTitle/PageTitle';
 
 class ThankYou extends Component {
 
@@ -10,10 +11,9 @@ class ThankYou extends Component {
     render(){
         return(
             <div>
-                <div>
-                    Thank you for submitting your feedback
-                </div>
-                <button onClick={this.handleNext}>Start Another Feedback</button>
+                
+                <PageTitle pageTitle={'Thank you for your feedback!'}/>
+                <button onClick={this.handleNext}>Leave New Feedback</button>
             </div>
             
         )

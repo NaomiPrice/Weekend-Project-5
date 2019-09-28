@@ -9,13 +9,13 @@ import logger from 'redux-logger';
 
 
 
-const feedbackReducer = (state=[], action)=>{
+const feedbackReducer = (state={}, action)=>{
     console.log(state);
     switch(action.type){
         case 'SEND_FEEDBACK_VALUE':
-            return [...state, action.payload]
+            return {...state, ...action.payload}
         case 'EMPTY_STATE':
-            return []
+            return {}
         default: 
             return state;
     }

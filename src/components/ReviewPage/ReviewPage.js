@@ -16,6 +16,7 @@ class ReviewPage extends Component {
         return(
             <div>
                 <PageTitle pageTitle={'Review Your Feedback'}/>
+                {/* display answers from redux state */}
                 <div>
                     <h3>Feelings: {feedback.feeling}</h3>
                     <h3>Understanding: {feedback.understanding}</h3>
@@ -23,7 +24,6 @@ class ReviewPage extends Component {
                     <h3>Comments: {feedback.comments}</h3>
                 </div>
                 <button onClick={this.handleSubmit}>SUBMIT</button>
-
             </div>
         )
     }
