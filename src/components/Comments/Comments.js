@@ -6,14 +6,14 @@ class Comment extends Component {
     state = {
         comments: '',
     }
-    pageAdvance = (answer)=>{
+    pageAdvance = ()=>{
         console.log(this.state.commemts)
         //update redux with answer value from input field
         this.props.dispatch({type: 'SEND_FEEDBACK_VALUE', payload: {comments: this.state.comments}})
         //step to the next page
         this.props.history.push('/review')
     }
-    
+
     handleChange=(event)=>{
         console.log(event.target.value)
         this.setState({

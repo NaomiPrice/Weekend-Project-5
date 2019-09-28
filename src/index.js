@@ -11,10 +11,14 @@ import logger from 'redux-logger';
 
 const feedbackReducer = (state=[], action)=>{
     console.log(state);
-    if (action.type === 'SEND_FEEDBACK_VALUE'){
-        return [...state, action.payload]
+    switch(action.type){
+        case 'SEND_FEEDBACK_VALUE':
+            return [...state, action.payload]
+        case 'EMPTY_STATE':
+            return []
+        default: 
+            return state;
     }
-    return state;
 }
 
 const reduxStore = createStore(
