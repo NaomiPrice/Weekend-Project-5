@@ -1,21 +1,37 @@
 import React, { Component } from 'react';
+import PageTitle from '../PageTitle/PageTitle';
+import {connect} from 'react-redux';
 
 class Comment extends Component {
-    handleNext=()=>{
-
-        this.props.history.push('/review');
+    state = {
+        comments: '',
+    }
+    pageAdvance = (answer)=>{
+        console.log(this.state.commemts)
+        //update redux with answer value from input field
+        this.props.dispatch({type: 'SEND_FEEDBACK_VALUE', payload: {comments: this.state.comments}})
+        //step to the next page
+        this.props.history.push('/review')
+    }
+    
+    handleChange=(event)=>{
+        console.log(event.target.value)
+        this.setState({
+            comments: event.target.value
+        })
     }
 
     render(){
         return(
             <div>
-                <div>
-                    Do you want to leave a comment?
-                </div>
-                <button onClick={this.handleNext}>NEXT</button>
+                <PageTitle pageTitle={'Any comments you want to leave?'}/>
+                <label>Comments</label>
+                <br></br>
+                <input type="text" onChange={this.handleChange}></input>
+                <button onClick={this.pageAdvance}>NEXT</button>
             </div>
         )
     }
 }
 
-export default Comment;
+export default connect()(Comment);
