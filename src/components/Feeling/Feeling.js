@@ -3,7 +3,8 @@ import Select from '../Select/Select';
 
 class Feeling extends Component {
     
-    pageAdvance = ()=>{
+    pageAdvance = (answer)=>{
+        console.log(answer)
         //step to the next page
         this.props.history.push('/understanding')
     }
@@ -12,7 +13,7 @@ class Feeling extends Component {
         
         return(
             <div>
-                <div className="pageQuestion">
+                <div className="pageTitle">
                     <h2>How are you feeling today?</h2>
                 </div>
                 <Select pageAdvance={this.pageAdvance}

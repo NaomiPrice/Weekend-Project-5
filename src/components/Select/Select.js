@@ -12,6 +12,10 @@ class Select extends Component {
     }
 
     handleClick = ()=>{
+        //verify a selection has been made
+        if (this.state.answer === ''){
+            return alert('Please make a selection before going to the next question')
+        }
         // run pageAdvance to go to next page - send parent state value of answer
         this.props.pageAdvance(this.state.answer);
     }
