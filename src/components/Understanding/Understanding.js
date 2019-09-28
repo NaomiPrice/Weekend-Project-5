@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
+import Select from '../Select/Select';
+import PageTitle from '../PageTitle/PageTitle';
+import {connect} from 'react-redux';
 
 class Understanding extends Component {
-    state = {
 
-    }
-
-    handleNext=()=>{
-
-        this.props.history.push('/support');
+    pageAdvance = (answer)=>{
+        console.log(answer)
+        //update redux with answer value received from child
+        this.props.dispatch({type: 'SEND_FEEDBACK_VALUE', payload: {understanding: answer}})
+        //step to the next page
+        this.props.history.push('/support')
     }
 
     render(){
         return(
             <div>
-                <div>
-                    Do you understand?
-                </div>
-                <button onClick={this.handleNext}>NEXT</button>
+                <PageTitle pageTitle={'How well are you understanding the content?'}/>
+                <Select pageAdvance={this.pageAdvance}
+                        description={`Understanding?: 1 for "I'm totally lost", 5 for "I've got this!"`}/>
             </div>
         )
     }
 }
 
-export default Understanding;
+export default connect()(Understanding);
