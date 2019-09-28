@@ -14,21 +14,21 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't forget it!</i></h4>
-        </header>
-        <br/>
-       
-        <Route path="/" exact component={Home}></Route>
-        <Route path="/feeling" component={Feeling}></Route>
-        <Route path="/understanding" component={Understanding}></Route>
-        <Route path="/support" component={Support}></Route>
-        <Route path="/comments" component={Comments}></Route>
-        <Route path="/review" component={ReviewPage}></Route>
-        <Route path="/thank-you" component={ThankYou}></Route>
-      </div>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Feedback!</h1>
+            <h4><i>Don't forget it!</i></h4>
+          </header>
+          <br/>
+        
+          <Route path="/" exact component={Home}></Route>
+          <Route path="/feeling" component={Feeling}></Route>
+          <Route path="/understanding" component={Understanding}></Route>
+          <Route path="/support" component={Support}></Route>
+          <Route path="/comments" component={Comments}></Route>
+          <Route path="/review" component={ReviewPage}></Route>
+          <Route path="/thank-you" component={ThankYou}></Route>
+        </div>
       </Router>
     );
   }
