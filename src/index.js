@@ -9,16 +9,18 @@ import logger from 'redux-logger';
 
 
 
-const feedbackReducer = (state=[], action)=>{
+const feedbackReducer = (state=[1,0], action)=>{
+    console.log(state);
     return state;
 }
 
-const storeInstance = createStore(
+const reduxStore = createStore(
     combineReducers({
         feedbackReducer,
     }),
     applyMiddleware(logger)
 )
 
-ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={reduxStore}><App /></Provider>, document.getElementById('root'));
+
 registerServiceWorker();
