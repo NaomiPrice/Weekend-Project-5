@@ -13,15 +13,25 @@ class Support extends Component {
         this.props.history.push('/comments')
     }
     
+    pageBack = ()=>{
+        this.props.history.push('/understanding');
+    }
+
     render(){
         return(
             <div>
                 <PageTitle pageTitle={'How well are you being supported?'}/>
                 <Select pageAdvance={this.pageAdvance}
+                        pageBack ={this.pageBack}
+                        answer={this.props.reduxState.feedbackReducer.support}
                         description={`Support?: 1 for "I feel abandoned", 5 for "I feel supported!"`}/>
             </div>
         )
     }
 }
 
-export default connect()(Support);
+const putReduxStateOnProps = (reduxState) => ({
+    reduxState
+})
+
+export default connect(putReduxStateOnProps)(Support);

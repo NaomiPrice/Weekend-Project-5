@@ -16,6 +16,11 @@ class ReviewPage extends Component {
         //step to thank you page
         this.props.history.push('/thank-you');
     }
+
+    pageBack = ()=>{
+        this.props.history.push('/comments');
+    }
+
     render(){
         let feedback = this.props.reduxState.feedbackReducer;
         return(
@@ -28,7 +33,8 @@ class ReviewPage extends Component {
                     <h3>Support: {feedback.support}</h3>
                     <h3>Comments: {feedback.comments}</h3>
                 </div>
-                <button onClick={this.handleSubmit}>SUBMIT</button>
+                <button onClick={this.pageBack}>GO BACK</button>
+                <button onClick={this.handleSubmit}>SUBMIT FEEDBACK</button>
             </div>
         )
     }

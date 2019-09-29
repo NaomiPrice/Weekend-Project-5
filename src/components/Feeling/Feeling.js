@@ -24,10 +24,14 @@ class Feeling extends Component {
                 <PageTitle pageTitle={'How are you feeling today?'}/>
                 <Select pageAdvance={this.pageAdvance}
                         pageBack ={this.pageBack}
+                        answer={this.props.reduxState.feedbackReducer.feeling}
                         description={`Feeling?: 1 for "I'm stressed", 5 for "feeling great!"`}/>
             </div>
         )
     }
 }
+const putReduxStateOnProps = (reduxState) => ({
+    reduxState
+})
 
-export default connect()(Feeling);
+export default connect(putReduxStateOnProps)(Feeling);
