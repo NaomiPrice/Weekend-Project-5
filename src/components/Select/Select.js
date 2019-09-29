@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 class Select extends Component {
-    //local state to hold answer value provided by user
+    //local state to hold answer value provided by user - set local state to be respective redux state value
     state = {
-        answer: ''
+        answer: this.props.answer
     }
 
     handleChange = (event)=>{
@@ -28,19 +28,22 @@ class Select extends Component {
                     {/* //selection description provided by parent component */}
                     <label>{this.props.description}</label>
                     <br></br>
-                    <select onChange={this.handleChange}>
-                        <option value="">--Please choose an option--</option>
+                    {/* controled input to display redux state */}
+                    <select value={this.state.answer} onChange={this.handleChange}>
+                        <option value="" >--Please choose an option--</option>
                         <option value="5">5</option>
                         <option value="4">4</option>
                         <option value="3">3</option>
                         <option value="2">2</option>
                         <option value="1">1</option>
                     </select>
-
+                    <br></br>
+                    <button onClick={this.props.pageBack}>GO BACK</button>
                     <button onClick={this.handleClick}>NEXT</button>
                 </div>
         )
     }
 }
+
 
 export default Select;

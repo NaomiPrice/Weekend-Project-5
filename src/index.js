@@ -7,15 +7,20 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import logger from 'redux-logger';
 
+const initialState = {
+    feeling: '',
+    understanding: '',
+    support: '',
+    comments: ''
+}
 
-
-const feedbackReducer = (state={}, action)=>{
+const feedbackReducer = (state= initialState, action)=>{
     console.log(state);
     switch(action.type){
         case 'SEND_FEEDBACK_VALUE':
             return {...state, ...action.payload}
         case 'EMPTY_STATE':
-            return {}
+            return initialState
         default: 
             return state;
     }
