@@ -12,6 +12,7 @@ class Admin extends Component {
 
    getFeedback = ()=>{
        Axios.get('/feedback').then((response)=>{
+           //send data from DB to Redux state 
            this.props.dispatch({type: 'GET_FEEDBACK', payload: response.data})
        }).catch((error)=>{
            console.log('error getting all feedback', error);

@@ -11,8 +11,8 @@ class FeedbackItem extends Component {
             this.props.getFeedback();
         }).catch((error)=>{
             console.log('error deleting feedback item', error);
-        })
-    }
+        }) // end axios delete call
+    } //end delete function 
 
     render(){
         return(
