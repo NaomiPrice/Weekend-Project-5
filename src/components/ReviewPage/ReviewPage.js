@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import PageTitle from '../PageTitle/PageTitle';
+import Axios from 'axios';
 
 class ReviewPage extends Component {
 
     handleSubmit = ()=>{
-        //post call to add comments to server/db
-       
+        //post call to add feedback to server then to db
+       Axios.post('/feedback', this.props.reduxState.feedbackReducer)
+       .then ((response)=>{
+           console.log(response);
+       }).catch((error)=>{
+           console.log('error adding new feedback', error)
+       })
         //step to thank you page
         this.props.history.push('/thank-you');
     }
