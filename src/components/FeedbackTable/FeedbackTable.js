@@ -20,7 +20,7 @@ class FeedbackTable extends Component {
                 </thead>
                 <tbody>
                     {this.props.reduxState.allTheFeedbackReducer.map(feedback =>{
-                    return <FeedbackItem feedback={feedback}/>
+                    return <FeedbackItem key={feedback.id} feedback={feedback}/>
                             })}
                 </tbody>
             </table>

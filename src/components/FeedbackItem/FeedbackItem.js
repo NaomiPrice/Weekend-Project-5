@@ -11,7 +11,7 @@ class FeedbackItem extends Component {
                 <td>{this.props.feedback.understanding}</td>
                 <td>{this.props.feedback.support}</td>
                 <td>{this.props.feedback.comments}</td>
-                <button>DELETE</button>
+                <td><button>DELETE</button></td>
             </tr>
         )
     }

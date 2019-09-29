@@ -6,7 +6,18 @@ import FeedbackTable from '../FeedbackTable/FeedbackTable';
 
 class Admin extends Component {
 
-   
+   componentDidMount = ()=>{
+       this.getFeedback();
+   }
+
+   getFeedback = ()=>{
+       Axios.get('/feedback').then((response)=>{
+           console.log(response.data);
+           this.props.dispatch({type: 'GET_FEEDBACK', payload: response.data})
+       }).catch((error)=>{
+           console.log('error getting all feedback', error);
+       })
+   }
 
     render(){
         
@@ -19,8 +30,5 @@ class Admin extends Component {
         )
     }
 }
-const putReduxStateOnProps = (reduxState) => ({
-    reduxState
-})
 
-export default connect(putReduxStateOnProps)(Admin);
+export default connect()(Admin);
