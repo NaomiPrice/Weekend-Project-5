@@ -6,7 +6,7 @@ class Home extends Component {
         return(
             
             <div>
-                <Link to="feeling">BEGIN YOUR FEEDBACK</Link>
+                <Link to="feeling">CLICK HERE TO BEGIN YOUR FEEDBACK</Link>
             </div>
         )
     }

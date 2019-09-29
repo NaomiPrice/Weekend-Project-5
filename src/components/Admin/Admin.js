@@ -12,7 +12,6 @@ class Admin extends Component {
 
    getFeedback = ()=>{
        Axios.get('/feedback').then((response)=>{
-           console.log(response.data);
            this.props.dispatch({type: 'GET_FEEDBACK', payload: response.data})
        }).catch((error)=>{
            console.log('error getting all feedback', error);
@@ -24,7 +23,7 @@ class Admin extends Component {
         return(
             <div>
                 <PageTitle pageTitle={'Feedback Results'}/>
-                <FeedbackTable/>
+                <FeedbackTable getFeedback={this.getFeedback}/>
                 
             </div>
         )

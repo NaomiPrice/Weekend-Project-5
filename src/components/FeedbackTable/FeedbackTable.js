@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import Axios from 'axios';
 import FeedbackItem from '../FeedbackItem/FeedbackItem';
 
 class FeedbackTable extends Component {
@@ -20,7 +19,9 @@ class FeedbackTable extends Component {
                 </thead>
                 <tbody>
                     {this.props.reduxState.allTheFeedbackReducer.map(feedback =>{
-                    return <FeedbackItem key={feedback.id} feedback={feedback}/>
+                    return <FeedbackItem key={feedback.id} 
+                                    feedback={feedback}
+                                    getFeedback={this.props.getFeedback}/>
                             })}
                 </tbody>
             </table>

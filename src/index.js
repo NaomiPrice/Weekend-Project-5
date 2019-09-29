@@ -27,7 +27,7 @@ const feedbackReducer = (state= initialState, action)=>{
 
 const allTheFeedbackReducer = (state=[], action)=>{
     if (action.type === 'GET_FEEDBACK'){
-        return [...state, ...action.payload]
+        return action.payload
     }
     return state;
 }
