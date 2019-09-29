@@ -15,7 +15,6 @@ const initialState = {
 }
 
 const feedbackReducer = (state= initialState, action)=>{
-    console.log(state);
     switch(action.type){
         case 'SEND_FEEDBACK_VALUE':
             return {...state, ...action.payload}
@@ -26,9 +25,14 @@ const feedbackReducer = (state= initialState, action)=>{
     }
 }
 
+const allTheFeedbackReducer = (state=[], action)=>{
+    return state;
+}
+
 const reduxStore = createStore(
     combineReducers({
         feedbackReducer,
+        allTheFeedbackReducer
     }),
     applyMiddleware(logger)
 )
